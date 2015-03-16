@@ -78,3 +78,12 @@ body {
   }
 }
 /* CSS declarations go here */
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+.btn{
+  color: #1f3568;
+}
+

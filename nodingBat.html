@@ -41,8 +41,17 @@
                 <p>Given an int n, return the absolute difference between n and 21, 
                 except return double the absolute difference if n is over 21.
                 </p>
-                {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="varName"}}
-                <button type="submit">Submit</button>
+                <!-- This is where the code mirror for the exercise is created -->
+                {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="ex1"}}
+                <button type="submit" class = "btn" id="btn1">Submit</button>
+                
+                <!-- Working on Output text area -->
+                <div id="out_ex1_div">
+<!--                     <textarea id="output_ex1"></textarea> -->
+
+                {{> CodeMirror id="some-id2" name="someName" options=editorOptions code=editorCode reactiveVar="out_ex1"}}
+                </div>
+                
                 <!-- <textarea id="Warmup1"></textarea> -->
                
 
@@ -60,15 +69,18 @@
                 <p>Given an int n, return the absolute difference between n and 21, 
                 except return double the absolute difference if n is over 21.
                 </p>
-                <pre><code>
-var diff21 = function(n) {
-  <!-- if (n <= 21) -->
+                {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="ex2"}}
+                <button type="submit" class="btn">Submit</button>
+                <!-- <pre><code> -->
+                    
+<!-- var diff21 = function(n) {
+  if (n <= 21)
     return 21 - n;
   else
     return (n - 21) * 2
 }
-console.log(diff21(19));
-                </code></pre>
+console.log(diff21(19)); -->
+             <!--    </code></pre> -->
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
