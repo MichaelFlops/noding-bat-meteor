@@ -385,6 +385,36 @@ var front3 = function(str){
 	}
 	return front + front + front;
 }
-console.log(front3("Java"));
-console.log(front3("Chocolate"));
-console.log(front3("abc"));
+// console.log(front3("Java"));
+// console.log(front3("Chocolate"));
+// console.log(front3("abc"));
+
+// Java > Warmup-1 > front22
+// Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back,
+//  so "kitten" yields"kikittenki". If the string length is less than 2, use whatever chars are there.
+
+var front22 = function(str){
+	front = "";
+	var take = 2;
+	if (take > str.length){
+		take = str.length;
+	}
+	front = str.substring(0,take);
+	return front + str + front;
+}
+
+// console.log(front22("kitten"));
+// console.log(front22("Ha"));
+// console.log(front22("abc"));
+
+
+// Java > Warmup-1 > in1020
+// Given 2 int values, return true if either of them is in the range 10..20 inclusive. 
+
+var in1020 = function(a,b){
+	return ((a >= 10 && a <= 20 || b >= 10 && b <= 20));
+}
+
+// console.log(in1020(12,99));
+// console.log(in1020(21,12));
+// console.log(in1020(8,99));
