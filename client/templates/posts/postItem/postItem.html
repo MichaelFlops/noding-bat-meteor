@@ -9,14 +9,17 @@
                       <li class="active">{{name}}</li>
                   </ol>
                 </h4>
-                {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="varName"}}
-                <button type="submit" class="btn btn-primary" id="run">
-                        Run
-                </button>
-                <button class="btn btn-default" id="help">
-                        <a href="{{pathFor 'postHelp'}}">Help</a>
-                </button>
-                <hr>
+                  {{> CodeMirror id="some-id" name="someName" options=editorOptions code=editorCode reactiveVar="varName"}}
+                    <button type="submit" class="btn btn-primary" id="run">
+                      Run
+                    </button>
+                    <button class="btn btn-default">
+                      <a href="{{pathFor 'helpForum'}}">Help</a>                      
+                    </button>
+                    <button class="btn btn-danger" id="help">
+                      <a href="{{pathFor 'postHelp'}}">Chat!</a>  
+                    </button>
+                      <hr>
             </div>
         </div>
     </div>

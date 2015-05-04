@@ -8,6 +8,9 @@ Template.sidebar.helpers({
   postForum: function(){
     return Session.get('postForum');
   },
+  solForum: function(){
+  	return Session.get('forum');
+  },
 	success: function(){
 		return Session.get('success');
 	},

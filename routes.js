@@ -10,7 +10,6 @@ Router.route('/:_section/:_name', function () {
 
 // sections routes
 Router.route('/:_section', function () {
-  console.log("ewrwer");
   this.render('postSection');
 });
 
@@ -18,6 +17,7 @@ Router.route('/:_section', function () {
 Router.route("/", function() {
 	this.render("postList");
 });
+
 
 Router.route('/postItem/submit', {name: 'postSubmit'});
 
