@@ -11,6 +11,10 @@ Template.postItem.helpers({
 });
 
 Template.postItem.rendered = function () {
+  Session.set('success', null);
+  Session.set('failure', null);
+  Session.set('postForum', null);
+
   Session.set("varName", this.data.setup);
 }
 
@@ -46,10 +50,21 @@ Template.postItem.events({
 
         currentDiv.html(self.parameters+"<i class='fa fa-long-arrow-right'></i>"+ output +" <i class='fa fa-frown-o'></i> "+ userOutput );
       }
+
     }
 
-    if (solutionIndex == index)
-      Meteor.call("userUpdate", Meteor.user()._id, this.name);
+    if (solutionIndex == index){
+      Session.set('failure', null);
+      Session.set('success', this._id);
+
+      var id = Meteor.user()._id;
+      var name = this.name;
+      Meteor.call("userUpdate", id, name);
+
+    }else{
+      Session.set('success', null);
+      Session.set('failure', this._id);
+    }
 
   },
   'click #help': function(){
