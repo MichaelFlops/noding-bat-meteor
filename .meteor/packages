@@ -15,5 +15,7 @@ fortawesome:fontawesome
 iron:router
 accounts-password
 sacha:spin
-ian:accounts-ui-bootstrap-3
 autopublish
+natestrauser:animate-css
+ian:accounts-ui-bootstrap-3
+coffeescript

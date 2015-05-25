@@ -1,57 +1,27 @@
-// works
-Router.route('/:_name', function () {
-  var item = Posts.findOne({name: this.params._name});
-  console.log("route");
-  console.log(item);
-  if(!item)
-  	this.render('notFound');
-  else
-  	this.render('postItem', {data: item});
-});
+// Router.route('/:_section/:_name/:_title', function () {
+//   this.postList('postList', {
+//     data: function() {
+//       return Posts.findOne({_title: this.params._title});
+//     }
+//   })
+// });
 
-// test
 Router.route('/:_section/:_name', function () {
-  var item = Posts.findOne({section: this.params._section}, {name: this.params._name});
-  // console.log("route");
-  // console.log(item);
-  if(!item)
-    this.render('notFound');
-  else
-    this.render('postItem', {data: item});
+  this.render('exerciseItem');
 });
 
-// sections routes
 Router.route('/:_section', function () {
-  var item = Posts.findOne({section: this.params._section});
-  console.log("route");
-  console.log(item);
-  if(!item)
-    this.render('notFound');
-  else
-    this.render('postSection', {data: item});
+  this.render('exerciseSection');
 });
-
-
 
 Router.route("/", function() {
-	this.render("postList");
+	this.render("exerciseList");
 });
 
-Router.route('/postItem/submit', {name: 'postSubmit'});
-
-Router.route('/:_name/_id', function() {
-  var p = Posts.findOne({_id: this.params._id});
-  if(p)
-    this.render('forum', {p_id:id});
-  else
-    this.render('forumNotCreated'); //else render to blank forum screen ex. "Be First...!"
-})
 
 Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound',
-  waitOn: function() { return Meteor.subscribe('posts'); }
+  waitOn: function() { return Meteor.subscribe('exercises'); }
 });
-
-// Router.onBeforeAction('dataNotFound', {only: 'postList'});

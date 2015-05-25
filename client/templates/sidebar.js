@@ -1,21 +1,21 @@
 Template.sidebar.helpers({
-	//var item = Router.route('/posts/:_id', {name: '.show'})
-	post:function(){
+	exercise:function(){
 		var name = Router.current().params._name;
-		var post = Posts.findOne({name:name});
-		return post;
+		var exercise = Exercises.findOne({name:name});
+		return exercise;
 	},
-	exerciseLink: function(){
-		var exercises = Posts.find().fetch();
-		return exercises;
-	},
-  postForum: function(){
-    return Session.get('postForum');
+  exerciseForum: function(){
+    return Session.get('exerciseForum');
   },
 	success: function(){
 		return Session.get('success');
 	},
 	failure: function(){
-		return Session.get('failure')
+		return Session.get('failure');
 	}
 });
+
+var abiShake = function(){
+	var currentDiv = $('h1.animated').removeClass('shake');
+	currentDive.addClass('shake');
+}
